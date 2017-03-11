@@ -22,10 +22,11 @@ d3.csv("mapCondensed.csv", function(error, data) {
 
 
 
-  svg.selectAll("circle")
+  svg.selectAll(".circle")
 	.data(data)
 	.enter()
 	.append("circle")
+	.attr("class", "circle")
 	.attr("cx", function(d) {
 		return d.X;
 	})
@@ -35,8 +36,7 @@ d3.csv("mapCondensed.csv", function(error, data) {
 	.attr("r", function(d) {
 		return 8;
 	})
-		.style("fill", "gray")	
-		.style("opacity", 0.75)	
+			
 
 
 	//tooltip
