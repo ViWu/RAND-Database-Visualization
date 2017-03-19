@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/d3.slider.css">
+  <title>Worldwide Terrorism Incidents</title>
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+ </head>
+
+ <body style="padding:0">
+ 	<h1 style="margin-left:450px"><b>Worldwide Terrorism Incidents</b></h1>
+       <h2 style="margin-left:500px">International Terrorism from 1971 to 2013</h2>
+       <br><br>
+		<div class="container-fluid">		
+			<div class="row">
+				<div class="col-sm-8">
+					<figure class="margin-b-2">
+					        <div id="tooltip"  class="hidden"> </div>
+   				 			<div id="tooltip2"  class="hidden"> </div> 
+     						<div id="tooltip3"  class="hidden"> </div> 
+					</figure>
+				</div>
+				<div class="col-sm-4">
+					<div id = "scatter"></div>
+					    <ul class="nav nav-pills">
+					    	<div class="btn-group">
+							  <button type="button" class="btn  btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left: 95px;">
+							    Change Data View <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu">
+					          <li><a href="#startviz">View By Attack Type</a></li>
+					          <li><a href="#startviz">View By Weapon Type</a></li>
+					          <li><a href="#startviz">View By Target Type</a></li>
+					        </ul>
+							</div>
+    					</ul>
+    					<br>
+					
+					<div class="panel panel-default">
+						<div id="panel-head" class="panel-heading">
+							<h4 class="panel-title">Loading Panel ... (10 seconds)</h4>
+						</div>
+						<div class="panel-body"></div>
+					</div>
+				</div>
+				<div class="row">
+				<div class="col-sm-12">
+					<div class="page-header">
+						   <div id="tooltip4"  class="hidden"> </div>
+					</div>			    
+				</div>
+			</div>
+			</div>
+			<hr>
+			<footer class="margin-tb-3">
+				<div class="row">
+					<div class="col-lg-12">
+						    <p style="margin-left:250px" id="source">Data Source: <a href="http://www.rand.org/nsrd/projects/terrorism-incidents.html">RAND Database of Worldwide Terrorism Incidents</a> and <a href="http://www.start.umd.edu/gtd/">The Global Terrorism Database (GTD)</a></p>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+	    <script src="assets/js/jquery-1.11.2.min.js"></script>
+
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/d3/d3.min.js"></script>
+
+		<script type="text/javascript" src="assets/js/topojson.v0.min.js"></script>
+
+		<script type="text/javascript" src="assets/js/core/initialize.js"></script>
+		<script type="text/javascript" src="assets/js/core/drawComponents.js"></script>
+		<script type="text/javascript" src="assets/js/core/drawMap.js"></script>
+		<script type="text/javascript" src="assets/js/core/drawBrush.js"></script>
+		<script type="text/javascript" src="assets/js/core/drawHeaderChart.js"></script>
+		<script type="text/javascript" src="assets/js/core/drawPanel.js"></script>
+		<script>
+			var view;
+			var filteredArrayByYear=[];
+			initialize();
+		</script>
+  </body>
+</html>
