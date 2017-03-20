@@ -222,11 +222,7 @@ initPlot(" ");
 
 
 function transition(data, svg2, city){
-	 /*counter++;
-		if(Math.abs(counter % 2) == 1)
-                    update("Denver", data);
-		else
-		    update("Tarlac", data);*/
+	
 	update(city, data);
 
 
@@ -341,18 +337,17 @@ function transition(data, svg2, city){
 
                     // Update circles
                     svg2.selectAll("circle")
-                        .data(dataset)  // Update with new data
-                        .transition()  // Transition from old to new
-                        .duration(1000)  // Length of animation
-                        .each("start", function() {  // Start animation
-                            d3.select(this)  // 'this' means the current element
-                                .attr("fill", "brown")  // Change color
-                                .attr("r", 10);  // Change size
+                        .data(dataset)  
+                        .transition()  
+                        .duration(1000)  
+                        .each("start", function() {  //Starts the animation
+                            d3.select(this)  
+                                .attr("fill", "brown")  
+                                .attr("r", 10);  
                         })
                         .delay(function(d, i) {
                             return i / dataset.length * 500;  // Dynamic delay (i.e. each item delays a little longer)
                         })
-                        //.ease("linear")  // Transition easing - default 'variable' (i.e. has acceleration), also: 'circle', 'elastic', 'bounce', 'linear'
                         .attr("cx", function(d) {
                             return xScale(d[0]);  // Circle's X
                         })
@@ -436,15 +431,15 @@ d3.csv("data/scatterPlot.csv", function(error, data) {
             // Create scale functions
              xScale = d3.scale.linear()  // xScale is width of graphic
                             .domain([0, d3.max(dataset, function(d) {
-                                return d[0];  // input domain
+                                return d[0];  
                             })])
                             .range([padding, canvas_width - padding * 2]); // output range
 
              yScale = d3.scale.linear()  // yScale is height of graphic
                             .domain([0, d3.max(dataset, function(d) {
-                                return d[1];  // input domain
+                                return d[1];  
                             })])
-                            .range([canvas_height - padding, padding]);  // remember y starts on top going down so we flip
+                            .range([canvas_height - padding, padding]);  
 
             // Define X axis
              xAxis = d3.svg.axis()
@@ -503,4 +498,4 @@ d3.csv("data/scatterPlot.csv", function(error, data) {
 });
 
 }
-//====================================================================
+
