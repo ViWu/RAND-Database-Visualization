@@ -16,44 +16,56 @@
  	<h1 style="margin-left:450px"><b>Worldwide Terrorism Incidents</b></h1>
        <h2 style="margin-left:500px">International Terrorism from 1971 to 2013</h2>
        <br><br>
-		<div class="container-fluid">		
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-8">
 					<figure class="margin-b-2">
 					        <div id="tooltip"  class="hidden"> </div>
-   				 			<div id="tooltip2"  class="hidden"> </div> 
-     						<div id="tooltip3"  class="hidden"> </div> 
+   				 			<div id="tooltip2"  class="hidden"> </div>
+     						<div id="tooltip3"  class="hidden"> </div>
 					</figure>
 				</div>
-				<div class="col-sm-4">
-					<div id = "scatter"></div>
+				<div class="col-sm-4" id="scatterz">
 					    <ul class="nav nav-pills">
-					    	<div class="btn-group">
-							  <button type="button" class="btn  btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left: 95px;">
-							    Change Data View <span class="caret"></span>
-							  </button>
-							  <ul class="dropdown-menu">
-					          <li><a href="#startviz">View By Attack Type</a></li>
-					          <li><a href="#startviz">View By Weapon Type</a></li>
-					          <li><a href="#startviz">View By Target Type</a></li>
-					        </ul>
-							</div>
+                            <div id = "scatter"></div>
+
     					</ul>
     					<br>
-					
-					<div class="panel panel-default">
-						<div id="panel-head" class="panel-heading">
-							<h4 class="panel-title">Loading Panel ... (10 seconds)</h4>
-						</div>
-						<div class="panel-body"></div>
-					</div>
+
+
 				</div>
-				<div class="row">
+			<div class="row">
 				<div class="col-sm-12">
 					<div class="page-header">
 						   <div id="tooltip4"  class="hidden"> </div>
-					</div>			    
+					</div>
+
+
 				</div>
+                <div class="col-sm-4">
+                    <ul class="nav nav-pills">
+                        <div class="btn-group">
+                          <button type="button" class="btn  btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left: 95px;">
+                            Change Data View <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu">
+                          <li><a href="#startviz">View By Attack Type</a></li>
+                          <li><a href="#startviz">View By Weapon Type</a></li>
+                          <li><a href="#startviz">View By Target Type</a></li>
+                        </ul>
+                        </div>
+                    </ul>
+                    <br>
+
+                <div class="panel panel-default">
+                    <div id="panel-head" class="panel-heading">
+                        <h4 class="panel-title">Loading Panel ... (10 seconds)</h4>
+                    </div>
+                    <div class="panel-body"></div>
+                </div>
+                </div>
+
+
 			</div>
 			</div>
 			<hr>

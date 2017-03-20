@@ -17,7 +17,7 @@ function drawTotalKill(){
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + -80 + "," + margin.top + ")");
 
 
     d3.csv("data/sumTable.csv", function(error, data) {
@@ -32,28 +32,28 @@ function drawTotalKill(){
     .attr("y", function(d) { return height - y(d.Totals - 40); })
     .attr("height", function(d) { return y(d.Totals); })
     .on("mouseover", function(d) {
-      
+
           var coordinates = [0, 0];
           coordinates = d3.mouse(this);   // Get the mouse positions to show tooltip at.
-            
+
           var xPosition = coordinates[0];
           var yPosition = coordinates[1];
-           
+
           d3.select("#tooltip4")
                 .style('left', xPosition + 'px')
                 .style('top', yPosition + 'px')
                 .text("Total Attacks: " + d.Totals + " | Year: " + d.Year);
-            
-  
+
+
           d3.select("#tooltip4").classed("hidden", false);
     })
-  
+
     .on("mouseout", function() {
             d3.select("#tooltip4").classed("hidden", true);
     });
 
-  
-  }); 
+
+  });
 
 
 }

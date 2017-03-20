@@ -4,7 +4,7 @@ function drawBrush(projection,brushMargin, width, height){
 
     var svg6 = d3.select(".page-header").append("svg")
       .attr("width", width + brushMargin.left + brushMargin.right+300)
-      .attr("height", 60);  
+      .attr("height", 60);
 
     var x = d3.scale.linear()
       .domain([1971, 2013])
@@ -21,13 +21,13 @@ function drawBrush(projection,brushMargin, width, height){
 
     svg6.append("g")
       .attr("class", "x axis")
-      .attr("transform", "translate(140," + height  + ")")
+      .attr("transform", "translate(18," + height  + ")")
       .call(d3.svg.axis()
         .scale(x)
         .tickValues(d3.range(1971, 2014, 3))
         .tickFormat(d3.format(".0f"))
         .orient("bottom")
-        .tickSize(10)     
+        .tickSize(10)
         .tickPadding(12));
 
     var slider = svg6.append("g")
@@ -43,19 +43,19 @@ function drawBrush(projection,brushMargin, width, height){
         function change() {
 
                   var value = brush.extent()[0];
-                  
-                    if (d3.event.sourceEvent) { 
+
+                    if (d3.event.sourceEvent) {
                       value = x.invert(d3.mouse(this)[0]);
                       brush.extent([value, value]);
                     }
 
                     value=parseInt(value);
 
-                    
+
                     filteredArrayByYear.length=0;
 
 
-                   for(i=0;i<terror_year.length;i++){	
+                   for(i=0;i<terror_year.length;i++){
                       if(terror_year[i].iyear == value){
                         filteredArrayByYear.push(terror_year[i]);
                       }
@@ -78,13 +78,12 @@ function drawBrush(projection,brushMargin, width, height){
                            .attr("cy", function(d) {
                                    return projection([d.longitude, d.latitude])[1];
                            })
-                  
+
 
 
         }
 
- 
+
 
 
 }
-

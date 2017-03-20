@@ -2,7 +2,7 @@
 
 function drawPanel(firstLoad){
 
-  
+
 	if(firstLoad){
 	view = "View By Attack Type";
 	myyear = 1971;
@@ -41,13 +41,13 @@ function countTotalsByCategories(inputCategories){
 	var storeTotals = [0,0,0,0,0,0,0,0];
 	var myString;
 	var categories = inputCategories;
-	
+
 	for(i=0;i<dataArray.length;i++)
-    {	
-    	
+    {
+
     	if(view == "View By Weapon Type"){
     		myString = dataArray[i].weaptype1_txt;
-    		
+
     	}
     	else if(view == "View By Attack Type"){
     		myString = dataArray[i].attacktype1_txt;
@@ -71,8 +71,8 @@ function countTotalsByCategories(inputCategories){
       {storeTotals[5]++;}
       else if(myString  == categories[6])
       {storeTotals[6]++;}
-      else 
-      {storeTotals[7]++;} 
+      else
+      {storeTotals[7]++;}
   }
 
   return storeTotals;
@@ -90,10 +90,10 @@ function drawPanelCanvas(Year,viewCategories,viewCatsData,totalsForEachCategory)
 d3.selectAll(".loc")
       .data(filteredArrayByYear)
       .style("fill", function(d){
-               
+
         if(view == "View By Weapon Type"){
         catName = d.weaptype1_txt;
-          
+
         }
         else if(view == "View By Attack Type"){
           catName = d.attacktype1_txt;
@@ -146,7 +146,7 @@ d3.selectAll(".loc")
             .domain([0,viewCategories.length])
             .range([0,200]);
 
-    
+
     var canvas = d3.select('.panel-body')
             .append('svg')
             .attr({'width':350,'height':220});
@@ -174,7 +174,7 @@ d3.selectAll(".loc")
 
     var c10 = d3.scale.ordinal().range(["#00b2e4","#ff8800","#61d04f","#ff3f4f","#da36d7","#f0ee2e","#05da9e","#ff7af0","#ffffff","ffffff"]);
 
-
+// bar chart
     var chart = canvas.append('g')
               .attr("transform", "translate(125,7)")
               .attr('id','bars')
@@ -191,7 +191,7 @@ d3.selectAll(".loc")
     var transit = d3.select(".panel-body").select("svg").selectAll("rect")
                 .data(totalsForEachCategory)
                 .transition()
-                .duration(1000) 
+                .duration(1000)
                 .attr("width", function(d) {return xscale(d); });
 
     var transitext = d3.select(".panel-body").select("svg").select('#bars')

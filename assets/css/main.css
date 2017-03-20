@@ -3,6 +3,60 @@ html, body{
   font: 14px/16px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.container-fluid {
+    padding: 0px !important;
+}
+
+.col-sm-8 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width:62.66666667%;
+}
+#scatterz {
+    margin-top: -28px !important;
+}
+
+.col-sm-4 {
+    position: inherit;
+    margin-top: -150px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width:37.33333333%;
+    z-index: -1;
+}
+
+.btn-group, .btn-group-vertical {
+    display:inline !important;
+    position: inherit;
+    z-index: -1 !important;
+}
+
+.btn {
+    width: 100%;
+    margin-left: 0 !important;
+    position: inherit;
+    z-index: 1 !important;
+}
+
+.dropdown-menu {
+    left: 0px !important;
+    position: relative;
+    z-index: 1 !important;
+    min-width: 470px;
+}
+
+.panel-body {
+    height: 250px;
+}
+
+.col-sm-12 {
+    /*position: inherit;*/
+    width:62.666666%;
+    padding-left: 0px;
+    padding-right: 0px;
+    /*z-index: -1;*/
+}
+
 h1{
    font-size: 30px;
   color: #1a1a1a;
@@ -54,7 +108,7 @@ path {
     .country:hover{
         cursor:pointer;
     }
-    
+
     .arc:hover{
         fill:#3e91e3;
         cursor:pointer;
@@ -74,7 +128,7 @@ path {
   stroke-width: 1.25px;
   cursor: default;
 }
-    
+
      #tooltip {
         position: absolute;
         width: auto;
@@ -86,7 +140,7 @@ path {
         -moz-border-radius: 9px;
         border-radius: 9px;
         pointer-events: none;
-        
+        z-index: 9000;
 }
 
       #tooltip2 {
@@ -103,8 +157,9 @@ path {
         -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
         pointer-events: none;
+        z-index: 9000;
 
-        
+
 }
 
 #tooltip3 {
@@ -118,7 +173,8 @@ path {
         -moz-border-radius: 9px;
         border-radius: 9px;
         pointer-events: none;
-        
+        z-index: 9000;
+
 }
 
 
@@ -138,24 +194,25 @@ path {
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
         pointer-events: none;
         font-size: 14px;
+        z-index: 9000 !important;
 }
-    
+
 #tooltip.hidden {
         display: none;
 }
-    
+
     #tooltip2.hidden {
         display: none;
 }
- 
+
    #tooltip3.hidden {
         display: none;
-}  
+}
 
    #tooltip4.hidden {
         display: none;
-}    
-   
+}
+
 
 
 #chart{
@@ -194,7 +251,7 @@ path {
   font: 23px 'Titillium Web', arial, sans-serif;
   /*background: #fafafa;*/
   /*color: #5E545D;*/
-  
+
   padding-left: 1000px;
   text-align: left;
   height: 20px;
@@ -233,7 +290,7 @@ path {
 }
 
 #map {
-  width: 70%; 
+  width: 70%;
    position: absolute;
    height:100%;
    height: 500px;
@@ -291,5 +348,3 @@ div#country_list{
   fill-opacity: .1;
   shape-rendering: crispEdges;
 }
-
-
