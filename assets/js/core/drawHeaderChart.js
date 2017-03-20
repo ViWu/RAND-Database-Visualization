@@ -26,7 +26,7 @@ function drawTotalKill(){
     totalCanvas.selectAll("bar")
     .data(data)
     .enter().append("rect")
-    .style("fill", "#262900")
+    .style("fill", "#4c9ed9")
     .attr("x", function(d) { return x(d.Year) + 90; })
     .attr("width", 10)
     .attr("y", function(d) { return height - y(d.Totals - 40); })

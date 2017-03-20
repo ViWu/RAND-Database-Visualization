@@ -34,7 +34,7 @@ function drawBrush(projection,brushMargin, width, height){
       .attr("class", "slider")
       .append("circle")
       .style("fill","#E95151")
-      .attr("transform", "translate(140," + height + ")")
+      .attr("transform", "translate(20," + height + ")")
       .attr("r", 8)
       .call(brush);
 

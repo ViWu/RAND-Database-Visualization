@@ -223,9 +223,6 @@ initPlot(" ");
 
 function transition(data, svg2, city){
 	 
-	var attack;
-	var target;
-
 	update(city, data);
 
 
@@ -251,79 +248,79 @@ function transition(data, svg2, city){
                			 .attr("cy", function(d) {  // Circle's Y
                    			 return yScale(d[1]);
                			 })
-				.append("svg:title")
-        				.text(function(d) { 
+                         .append("svg:title")
+                 				.text(function(d) {
 
 
-				if(d[1] == 1)
-					attack = "Assasination"; // orange	//assasination					
-				else if(d[1] == 2)
-					attack = "Armed Assault";	// blue	//armed assault
-				else if(d[1] == 3)
-					attack = "Bombing/Explosion";	// green //bombing/explosion
-				else if(d[1] == 4)
-					attack = "Hijacking";	// purple //hijacking
-				else if(d[1] == 5)
-					attack = "Hostage Taking (Barricade Incident)"; //yellow	//hostage taking
-				else if(d[1] == 6)
-					attack = "Hostage Taking (Kidnapping)";	// yellow //hostage taking
-				else if(d[1] == 7)
-					attack = "Infrastructure attack";	//red	//infrastructure attack
-				else if(d[1] == 8)
-					attack = "Unarmed Assault";	//cyan/aqua	//unarmed assault
-				else
-					attack = "Unknown";		//unknown
+         				if(d[1] == 1)
+         					attack = "Assasination"; // orange	//assasination
+         				else if(d[1] == 2)
+         					attack = "Armed Assault";	// blue	//armed assault
+         				else if(d[1] == 3)
+         					attack = "Bombing/Explosion";	// green //bombing/explosion
+         				else if(d[1] == 4)
+         					attack = "Hijacking";	// purple //hijacking
+         				else if(d[1] == 5)
+         					attack = "Hostage Taking (Barricade Incident)"; //yellow	//hostage taking
+         				else if(d[1] == 6)
+         					attack = "Hostage Taking (Kidnapping)";	// yellow //hostage taking
+         				else if(d[1] == 7)
+         					attack = "Infrastructure attack";	//red	//infrastructure attack
+         				else if(d[1] == 8)
+         					attack = "Unarmed Assault";	//cyan/aqua	//unarmed assault
+         				else
+         					attack = "Unknown";		//unknown
 
 
 
-				if(d[0] == 1)
-					target= "Business";
-				else if(d[0] == 2)
-					target= "Government (General)";
-				else if(d[0] == 3)
-					target= "Police";
-				else if(d[0] == 4)
-					target= "Military";
-				else if(d[0] == 5)
-					target= "Abortion Related";
-				else if(d[0] == 6)
-					target= "Airports & Airlines";
-				else if(d[0] == 7)
-					target= "Government (Diplomatic)";
-				else if(d[0] == 8)
-					target= "Police";
-				else if(d[0] == 9)
-					target= "Food and Water Supply";
-				else if(d[0] == 10)
-					target= "Police";
-				else if(d[0] == 11)
-					target= "Journalists & Media";
-				else if(d[0] == 12)
-					target= "Maritime";
-				else if(d[0] == 13)
-					target= "Other";
-				else if(d[0] == 14)
-					target= "Private Citizens & Property";
-				else if(d[0] == 15)
-					target= "Religious Figures/Institutions";
-				else if(d[0] == 16)
-					target= "Telecommunication";
-				else if(d[0] == 17)
-					target= "Terrorists";
-				else if(d[0] == 18)
-					target= "Tourists";
-				else if(d[0] == 19)
-					target= "Transportation";
-				else if(d[0] == 20)
-					target= "Unknown";
-				else if(d[0] == 21)
-					target= "Utilities";
-				else if(d[0] == 22)
-					target= "Violent Political Party";
-				
+         				if(d[0] == 1)
+         					target= "Business";
+         				else if(d[0] == 2)
+         					target= "Government (General)";
+         				else if(d[0] == 3)
+         					target= "Police";
+         				else if(d[0] == 4)
+         					target= "Military";
+         				else if(d[0] == 5)
+         					target= "Abortion Related";
+         				else if(d[0] == 6)
+         					target= "Airports & Airlines";
+         				else if(d[0] == 7)
+         					target= "Government (Diplomatic)";
+         				else if(d[0] == 8)
+         					target= "Police";
+         				else if(d[0] == 9)
+         					target= "Food and Water Supply";
+         				else if(d[0] == 10)
+         					target= "Police";
+         				else if(d[0] == 11)
+         					target= "Journalists & Media";
+         				else if(d[0] == 12)
+         					target= "Maritime";
+         				else if(d[0] == 13)
+         					target= "Other";
+         				else if(d[0] == 14)
+         					target= "Private Citizens & Property";
+         				else if(d[0] == 15)
+         					target= "Religious Figures/Institutions";
+         				else if(d[0] == 16)
+         					target= "Telecommunication";
+         				else if(d[0] == 17)
+         					target= "Terrorists";
+         				else if(d[0] == 18)
+         					target= "Tourists";
+         				else if(d[0] == 19)
+         					target= "Transportation";
+         				else if(d[0] == 20)
+         					target= "Unknown";
+         				else if(d[0] == 21)
+         					target= "Utilities";
+         				else if(d[0] == 22)
+         					target= "Violent Political Party";
 
-               			return ( "Attack: " + attack + "\nTarget: " + target); 
-       				 	})
+
+                        			return ( "Attack: " + attack + "\nTarget: " + target);
+                				 	})
                 		.attr("r", 5);  // radius
 
 			}
@@ -340,29 +337,29 @@ function transition(data, svg2, city){
 
                     // Update circles
                     svg2.selectAll("circle")
-                        .data(dataset)  // Update with new data
-                        .transition()  // Transition from old to new
-                        .duration(1000)  // Length of animation
-                        .each("start", function() {  // Start animation
-                            d3.select(this)  // 'this' means the current element
-                                .attr("fill", "brown")  // Change color
-                                .attr("r", 10);  // Change size
+                        .data(dataset)  
+                        .transition()  /
+                        .duration(1000)  
+                        .each("start", function() {  // Start the animation
+                            d3.select(this)  
+                                .attr("fill", "brown")  
+                                .attr("r", 10);  
                         })
                         .delay(function(d, i) {
                             return i / dataset.length * 500;  // Dynamic delay (i.e. each item delays a little longer)
                         })
-                        //.ease("linear")  // Transition easing - default 'variable' (i.e. has acceleration), also: 'circle', 'elastic', 'bounce', 'linear'
+                        
                         .attr("cx", function(d) {
                             return xScale(d[0]);  // Circle's X
                         })
                         .attr("cy", function(d) {
-                            return yScale(d[1]);  // Circle's Y
+                            return (yScale(d[1])-25);  // Circle's Y
                         })
                         .each("end", function(d) {  // End animation
 
 
 				if(d[1] == 1)
-					color = "#ff8800"; // orange	//assasination					
+					color = "#ff8800"; // orange	//assasination
 				else if(d[1] == 2)
 					color = "#00b2e4";	// blue	//armed assault
 				else if(d[1] == 3)
@@ -458,6 +455,7 @@ d3.csv("data/scatterPlot.csv", function(error, data) {
                             .ticks(5);
 
 
+
             // Create Circles
             svg2.selectAll("circle")
                 .data(dataset)
@@ -471,22 +469,21 @@ d3.csv("data/scatterPlot.csv", function(error, data) {
                 })
                 .attr("r", 5);  // radius
 
-
             // Add to X axis
             svg2.append("g")
                 .attr("class", "x axis")
-                .attr("transform", "translate(0," + (canvas_height - padding) +")")
+                .attr("transform", "translate(0," + (canvas_height - padding - 25) +")")
                 .call(xAxis);
 
             // Add to Y axis
             svg2.append("g")
                 .attr("class", "y axis")
-                .attr("transform", "translate(" + padding +",0)")
+                .attr("transform", "translate(" + padding +",-25)")
                 .call(yAxis);
 
           svg2.append("text")      // text label for the x axis
         .attr("x", 235 )
-        .attr("y",  340 )
+        .attr("y",  315 )
         .style("text-anchor", "middle")
         .text("Target Type");
 

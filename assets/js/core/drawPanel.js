@@ -139,7 +139,7 @@ d3.selectAll(".loc")
     });
 
     var xscale = d3.scale.linear()
-            .domain([0,40000])
+            .domain([0,24500])
             .range([0,1000]);
 
     var yscale = d3.scale.linear()
@@ -149,7 +149,7 @@ d3.selectAll(".loc")
 
     var canvas = d3.select('.panel-body')
             .append('svg')
-            .attr({'width':350,'height':220});
+            .attr({'width':460,'height':220});
 
 
     var xAxis = d3.svg.axis();
@@ -176,13 +176,13 @@ d3.selectAll(".loc")
 
 // bar chart
     var chart = canvas.append('g')
-              .attr("transform", "translate(125,7)")
+              .attr("transform", "translate(125,0)")
               .attr('id','bars')
               .selectAll('rect')
               .data(totalsForEachCategory)
               .enter()
               .append('rect')
-              .attr('height',10)
+              .attr('height',23)
               .attr({'x':0,'y':function(d,i){ return yscale(i)+10; }})
               .style('fill',c10)
               .attr('width',function(d){ return 0; });
@@ -200,6 +200,6 @@ d3.selectAll(".loc")
               .enter()
               .append('text')
               .attr({'x':function(d) {return xscale(d)+15; },'y':function(d,i){ return yscale(i)+18; }})
-              .text(function(d){ return d; }).style({'fill':'blue','font-size':'10px'});
+              .text(function(d){ return d; }).style({'fill':'#000','font-size':'12px','font-weight':'bold'});
 
 }

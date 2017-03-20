@@ -13,12 +13,18 @@ html, body{
     width:62.66666667%;
 }
 #scatterz {
-    margin-top: -28px !important;
+    margin-top: 0px !important;
+}
+
+#centerthis {
+    text-align: center;
+    font: 14px/16px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color:#000000;
 }
 
 .col-sm-4 {
     position: inherit;
-    margin-top: -150px;
+    margin-top: -140px;
     padding-left: 0px !important;
     padding-right: 0px !important;
     width:37.33333333%;
@@ -47,6 +53,7 @@ html, body{
 
 .panel-body {
     height: 250px;
+    padding: 0px !important;
 }
 
 .col-sm-12 {
@@ -114,10 +121,8 @@ path {
         cursor:pointer;
     }
 .axis .domain {
-  stroke: #000;
-  stroke-opacity: .2;
-  stroke-width: 10px;
-  stroke-linecap: round;
+  stroke: #414141;
+  stroke-width: 5px;
 }
 
 
